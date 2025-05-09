@@ -49,6 +49,15 @@ public class request extends HttpServlet {
         // 返回响应
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-        resp.getWriter().write("{\"status\": \"success\"}");
+        // resp.setHeader("Content-Type", "application/json; charset=utf-8");
+        if (name != null) {
+            // 成功
+            resp.setStatus(HttpServletResponse.SC_OK);
+            resp.getWriter().write("{\"message\": \"hello, " + name + "\"}");
+        } else {
+            // 失败
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            resp.getWriter().write("{\"message\": \"name parameter is null\"}");
+        }
     }
 }
