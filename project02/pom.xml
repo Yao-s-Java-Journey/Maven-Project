@@ -11,6 +11,7 @@
     <!--  设置打包方式为 war（默认为 jar）  -->
     <packaging>war</packaging>
 
+    <!-- bugfix: Cannot access defaults field of Properties -->
     <build>
         <plugins>
             <plugin>
@@ -21,11 +22,11 @@
         </plugins>
     </build>
 
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <argLine>-Dfile.encoding=UTF-8</argLine>
     </properties>
 
     <dependencies>
