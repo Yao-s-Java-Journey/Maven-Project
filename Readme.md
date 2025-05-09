@@ -265,7 +265,7 @@ Junit 提供了一些辅助方法，用来确定被测试的方法是否按照�
 | assertSame(0bject exp，0bject act，String msg) | 检查两个对象引用是否相等，不相等，就报错 |
 
 
-**注意事项：**最后一个参数 msg，表示错误提示信息，可以不指定（有对应的重载方法）。
+**注意事项：** 最后一个参数 msg，表示错误提示信息，可以不指定（有对应的重载方法）。
 
 ```java
 @DisplayName("测试性别")
@@ -306,14 +306,14 @@ scope 值以及对应的范围：
 
 ## Maven 常见解决方案
 ### 报红无法下载
-**场景：**Maven 项目中添加的依赖，未正确下载，造成右侧 Maven 面板中的依赖报红，即使 reload 也不会重新下载。
+**场景：** Maven 项目中添加的依赖，未正确下载，造成右侧 Maven 面板中的依赖报红，即使 reload 也不会重新下载。
 
-**原因：**由于网络原因，依赖没有下载完整导致的，在 Maven 仓库中生成了 xxx.lastUpdated 文件，该文件不删除，不会重新下载。
+**原因：** 由于网络原因，依赖没有下载完整导致的，在 Maven 仓库中生成了 xxx.lastUpdated 文件，该文件不删除，不会重新下载。
 
 **解决：**
 
 1. 根据 Maven 依赖的坐标，找到仓库对应的 `xxx.lastUpdated`文件，删除之后重新加载项目；
-2. 通过命令 `del /s *.lastUpdated`批量递归删除指定目录下的 `xxx.lastUpdated`文件，再重新加载。
+2. 通过命令 `del /s *.lastUpdated` 批量递归删除指定目录下的 `xxx.lastUpdated` 文件，再重新加载。
 
 ```powershell
 del /s *.lastUpdated
