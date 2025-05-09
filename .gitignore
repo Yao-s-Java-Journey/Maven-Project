@@ -1,0 +1,8 @@
+# Build Tools
+**/target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
